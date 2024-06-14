@@ -1,235 +1,139 @@
 {
-  area: {
-      name: 'Area',
-      units: {
-          squareKilometre: 'Square kilometre',
-          squareMetre: 'Square metre',
-          squareMile: 'Square mile',
-          squareYard: 'Square yard',
-          squareFoot: 'Square foot'
+  "area": {
+    "name": "Area",
+    "units": {
+      "squareKilometre": "Square kilometre",
+      "squareMetre": "Square metre",
+      "squareMile": "Square mile",
+      "squareYard": "Square yard",
+      "squareFoot": "Square foot"
+    },
+    "variants": {
+      "squareKilometre:squareMetre": {
+        "formula": "multiply the area value by 1e+6"
       },
-      variants: {
-          'squareKilometre:squareMetre': {
-              formula: 'multiply the area value by 1e+6',
-              calculation(n) {
-                  return n * new Number('1e+6');
-              }
-          },
-          'squareKilometre:squareMile': {
-              formula: 'divide the area value by 2.59',
-              calculation(n) {
-                  return n / new Number('2.59');
-              }
-          },
-          'squareKilometre:squareYard': {
-              formula: 'multiply the area value by 1.196e+6',
-              calculation(n) {
-                  return n * new Number('1.196e+6')
-              }
-          },
-          'squareKilometre:squareFoot': {
-              formula: 'for an approximate result, multiply the area value by 1.076e+7',
-              calculation(n) {
-                  return n * new Number('1.076e+7');
-              }
-          },
-          'squareMetre:squareKilometre': {
-              formula: 'divide the area value by 1e+6',
-              calculation(n) {
-                  return n / new Number('1e+6');
-              }
-          },
-          'squareMetre:squareMile': {
-              formula: 'divide the area value by 2.59e+6',
-              calculation(n) {
-                  return n / new Number('2.59e+6');
-              }
-          },
-          'squareMetre:squareYard': {
-              formula: 'multiply the area value by 1.196',
-              calculation(n) {
-                  return n * new Number('1.196');
-              }
-          },
-          'squareMetre:squareFoot': {
-              formula: 'multiply the area value by 10.764',
-              calculation(n) {
-                  return n * new Number('10.764');
-              }
-          },
-          'squareMile:squareKilometre': {
-              formula: 'multiply the area value by 2.59',
-              calculation(n) {
-                  return n * new Number('2.59');
-              }
-          },
-          'squareMile:squareMetre': {
-              formula: 'multiply the area value by 2.59e+6',
-              calculation(n) {
-                  return n * new Number('2.59e+6');
-              }
-          },
-          'squareMile:squareYard': {
-              formula: 'for an approximate result, multiply the area value by 3.098e+6',
-              calculation(n) {
-                  return n * new Number('3.098e+6');
-              }
-          },
-          'squareMile:squareFoot': {
-              formula: 'for an approximate result, multiply the area value by 2.788e+7',
-              calculation(n) {
-                  return n * new Number('2.788e+7');
-              }
-          },
-          'squareYard:squareKilometre': {
-              formula: 'divide the area value by 1.196e+6',
-              calculation(n) {
-                  return n / new Number('1.196e+6');
-              }
-          },
-          'squareYard:squareMetre': {
-              formula: 'divide the area value by 1.196',
-              calculation(n) {
-                  return n / new Number('1.196');
-              }
-          },
-          'squareYard:squareMile': {
-              formula: 'or an approximate result, divide the area value by 3.098e+6',
-              calculation(n) {
-                  return n / new Number('3.098e+6');
-              }
-          },
-          'squareYard:squareFoot': {
-              formula: 'multiply the area value by 9',
-              calculation(n) {
-                  return n * new Number('9');
-              }
-          },
-          'squareFoot:squareKilometre': {
-              formula: 'for an approximate result, divide the area value by 1.076e+7',
-              calculation(n) {
-                  return n / new Number('1.076e+7');
-              }
-          },
-          'squareFoot:squareMetre': {
-              formula: 'divide the area value by 10.764',
-              calculation(n) {
-                  return n / new Number('10.764');
-              }
-          },
-          'squareFoot:squareMile': {
-              formula: 'for an approximate result, divide the area value by 2.788e+7',
-              calculation(n) {
-                  return n / new Number('2.788e+7');
-              }
-          },
-          'squareFoot:squareYard': {
-              formula: 'divide the area value by 9',
-              calculation(n) {
-                  return n / new Number('9');
-              }
-          },
-      }
-  },
-  mass: {
-      name: 'Mass',
-      units: {
-          tonne: 'Tonne',
-          kilogram: 'Kilogram',
-          gram: 'Gram',
-          miligram: 'Miligram'
-      }
-  },
-  length: {
-      name: 'Length',
-      units: {
-          kilometre: 'Kilometre',
-          metre: 'Metre',
-          centimetre: 'Centimetre',
-          milimetre: 'Milimetre'
-      }
-  },
-  time: {
-      name: 'Time',
-      units: {
-          second: 'Second',
-          minute: 'Minute',
-          hour: 'Hour',
-          day: 'day'
+      "squareKilometre:squareMile": {
+        "formula": "divide the area value by 2.59"
       },
-      variants: {
-          'second:minute': {
-              formula: 'divide the time value by 60',
-              calculation(n) {
-                  return n / new Number('60');
-              }
-          },
-          'second:hour': {
-              formula: 'divide the time value by 3600',
-              calculation(n) {
-                  return n / new Number('3600');
-              }
-          },
-          'second:day': {
-              formula: 'divide the time value by 86400',
-              calculation(n) {
-                  return n / new Number('86400');
-              }
-          },
-          'minute:second': {
-              formula: 'multiply the time value by 60',
-              calculation(n) {
-                  return n * new Number('60');
-              }
-          },
-          'minute:hour': {
-              formula: 'divide the time value by 60',
-              calculation(n) {
-                  return n / new Number('60');
-              }
-          },
-          'minute:day': {
-              formula: 'divide the time value by 1440',
-              calculation(n) {
-                  return n / new Number('1440');
-              }
-          },
-          'hour:second': {
-              formula: 'multiply the time value by 3600',
-              calculation(n) {
-                  return n * new Number('3600');
-              }
-          },
-          'hour:minute': {
-              formula: 'multiply the time value by 60',
-              calculation(n) {
-                  return n * new Number('60');
-              }
-          },
-          'hour:day': {
-              formula: 'divide the time value by 24',
-              calculation(n) {
-                  return n / new Number('24');
-              }
-          },
-          'day:second': {
-              formula: 'multiply the time value by 86400',
-              calculation(n) {
-                  return n * new Number('86400');
-              }
-          },
-          'day:minute': {
-              formula: 'multiply the time value by 1440',
-              calculation(n) {
-                  return n * new Number('1440');
-              }
-          },
-          'day:hour': {
-              formula: 'multiply the time value by 24',
-              calculation(n) {
-                  return n * new Number('24');
-              }
-          }
+      "squareKilometre:squareYard": {
+        "formula": "multiply the area value by 1.196e+6"
+      },
+      "squareKilometre:squareFoot": {
+        "formula": "for an approximate result, multiply the area value by 1.076e+7"
+      },
+      "squareMetre:squareKilometre": {
+        "formula": "divide the area value by 1e+6"
+      },
+      "squareMetre:squareMile": {
+        "formula": "divide the area value by 2.59e+6"
+      },
+      "squareMetre:squareYard": {
+        "formula": "multiply the area value by 1.196"
+      },
+      "squareMetre:squareFoot": {
+        "formula": "multiply the area value by 10.764"
+      },
+      "squareMile:squareKilometre": {
+        "formula": "multiply the area value by 2.59"
+      },
+      "squareMile:squareMetre": {
+        "formula": "multiply the area value by 2.59e+6"
+      },
+      "squareMile:squareYard": {
+        "formula": "for an approximate result, multiply the area value by 3.098e+6"
+      },
+      "squareMile:squareFoot": {
+        "formula": "for an approximate result, multiply the area value by 2.788e+7"
+      },
+      "squareYard:squareKilometre": {
+        "formula": "divide the area value by 1.196e+6"
+      },
+      "squareYard:squareMetre": {
+        "formula": "divide the area value by 1.196"
+      },
+      "squareYard:squareMile": {
+        "formula": "or an approximate result, divide the area value by 3.098e+6"
+      },
+      "squareYard:squareFoot": {
+        "formula": "multiply the area value by 9"
+      },
+      "squareFoot:squareKilometre": {
+        "formula": "for an approximate result, divide the area value by 1.076e+7"
+      },
+      "squareFoot:squareMetre": {
+        "formula": "divide the area value by 10.764"
+      },
+      "squareFoot:squareMile": {
+        "formula": "for an approximate result, divide the area value by 2.788e+7"
+      },
+      "squareFoot:squareYard": {
+        "formula": "divide the area value by 9"
       }
+    }
+  },
+  "mass": {
+    "name": "Mass",
+    "units": {
+      "tonne": "Tonne",
+      "kilogram": "Kilogram",
+      "gram": "Gram",
+      "miligram": "Miligram"
+    }
+  },
+  "length": {
+    "name": "Length",
+    "units": {
+      "kilometre": "Kilometre",
+      "metre": "Metre",
+      "centimetre": "Centimetre",
+      "milimetre": "Milimetre"
+    }
+  },
+  "time": {
+    "name": "Time",
+    "units": {
+      "second": "Second",
+      "minute": "Minute",
+      "hour": "Hour",
+      "day": "day"
+    },
+    "variants": {
+      "second:minute": {
+        "formula": "divide the time value by 60"
+      },
+      "second:hour": {
+        "formula": "divide the time value by 3600"
+      },
+      "second:day": {
+        "formula": "divide the time value by 86400"
+      },
+      "minute:second": {
+        "formula": "multiply the time value by 60"
+      },
+      "minute:hour": {
+        "formula": "divide the time value by 60"
+      },
+      "minute:day": {
+        "formula": "divide the time value by 1440"
+      },
+      "hour:second": {
+        "formula": "multiply the time value by 3600"
+      },
+      "hour:minute": {
+        "formula": "multiply the time value by 60"
+      },
+      "hour:day": {
+        "formula": "divide the time value by 24"
+      },
+      "day:second": {
+        "formula": "multiply the time value by 86400"
+      },
+      "day:minute": {
+        "formula": "multiply the time value by 1440"
+      },
+      "day:hour": {
+        "formula": "multiply the time value by 24"
+      }
+    }
   }
 }
